@@ -10,22 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180624020336) do
+ActiveRecord::Schema.define(version: 20180620034720) do
 
   create_table "items", force: :cascade do |t|
     t.string "name"
-    t.decimal "price", precision: 2, scale: 10
+    t.decimal "price", precision: 2
     t.integer "quantity"
     t.string "item_type"
     t.integer "priority"
     t.boolean "purchased"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "lists", force: :cascade do |t|
-    t.string "name"
-    t.boolean "public"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
