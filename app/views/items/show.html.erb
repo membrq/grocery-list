@@ -1,0 +1,27 @@
+<!--This is where users can view additional details for an individual item.-->
+<div class="row">
+    <div class="col-md-8">
+        <div class="media"><br />
+
+        <div class="media-body">
+            <h2 class="media-heading"><%=@item.name%> Details</h2><br />
+            <table class="table table-bordered table-striped ">
+                <tbody>
+                    <tr>
+                        <th>Item Name</th><td><%= @item.name %></td>
+                    </tr>
+                    <tr>
+                         <th>Item Type</th><td><%= @item.item_type %></td>
+                    </tr>
+                    <tr>
+                        <th>Item Price</th><td><%= number_to_currency(@item.price) %></td>
+                    </tr>
+                 </tbody>
+            </table>
+        </div>
+        <div class="container">
+            <%= link_to "Return to Grocery List", items_path, class: 'btn btn-primary' %>          
+        </div>
+    </div>
+    </div>
+</div>

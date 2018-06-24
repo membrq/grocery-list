@@ -1,0 +1,26 @@
+<br>
+<div class="jumbotron">
+  <h1>Welcome to Grocery Buddy!</h1><br />
+    <p>Your solution for getting grocery shopping done!</p><br />
+    <% unless user_signed_in? %>
+      <%= link_to "Register", new_user_registration_path, class: 'btn btn-primary' %>
+    <% end %>
+</div>
+<div class="container-fluid">
+
+  <div class="row">
+    <h4>About</h4>
+    <p>Grocery Buddy is a grocery shopping tool that lets users create and update a shopping list.</p>
+  </div><br />
+  <div class="row">
+    <h4>Current Features</h4>
+    <ul>
+      <li>Users can add items to a list.</li>
+      <li>Users can specify the quantity of each item to be added to the list.</li>
+      <li>Users can track whether or not an item has been purchased.</li>
+      <li>Users can delete an item from a list. </li>
+      <li>Users can save the following details about each item: category, price.</li>
+      <li>Users can view and update their profile information.</li>
+    </ul>
+  </div>
+</div>

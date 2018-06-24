@@ -1,0 +1,31 @@
+<!--This is where users can view their profile details.-->
+<div class="row">
+    <div class="col-md-8">
+        <div class="media"><br />
+
+        <div class="media-body">
+            <h2 class="media-heading"><%=@user.first_name%>'s Profile</h2><br />
+            <table class="table table-bordered table-striped ">
+                <tbody>
+                    <tr>
+                        <th>First Name</th><td><%= @user.first_name %></td>
+                    </tr>
+                    <tr>
+                        <th>Last Name</th><td><%= @user.last_name %></td>
+                    </tr>
+                    <tr>
+                        <th>Username</th><td><%= @user.username %></td>
+                    </tr>
+                    <tr>
+                        <th>Email</th><td><%= @user.email %></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="container">
+            <%= link_to "Edit Profile", edit_user_path(current_user), class: 'btn btn-warning' %>          
+        </div>
+        
+        </div>
+    </div>
+</div>

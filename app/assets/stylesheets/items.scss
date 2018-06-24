@@ -1,0 +1,8 @@
+// Place all the styles related to the Items controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.checkbox-warning-filled [type="checkbox"][class*='filled-in']:checked+label:after {
+    border-color: #800080;
+    background-color: #800080;
+}

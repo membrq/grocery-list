@@ -1,0 +1,52 @@
+<!--This page displays the items on the list.-->
+<div class="row">
+    <div class="col-md-11">
+        <div class="media">
+        <br />
+
+        <div class="media-body">
+            <h2 class="media-heading text-center">Grocery List</h2><br />
+            <p>Welcome to your shopping list! Please use the buttons below to add items to your list or modify items on your list.</p><br />
+
+            <div class="container-fluid">
+                <%= link_to "Add Item", new_item_path, class: 'btn btn-success' %>
+            </div><br />
+
+            <div class="js-items">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr class="d-flex text-center">
+                        <td scope="col">Item Name</td>
+                        <td scope="col">Quantity To Buy</td>
+                        <td scope="col">Purchased?</td>
+                        <td scope="col">Update Your List</td>
+                        <td scope="col">Item Details</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @items.each do |item| %>
+                    <tr>
+                        <th scope="row" class="text-center"><%= item.name %></th>
+                        <th scope="row" class="text-center"><%= item.quantity %></th>
+                        <th scope="row" class="text-center">
+                            <% if item.purchased? %>
+                                <p>Yes</p>
+                            <% else %>
+                                <p>No</p>
+                            <% end %>
+                        </th>
+                        <th class="text-center">
+                            <%= link_to "Edit Item", edit_item_path(item), class: 'btn btn-warning' %>
+                            <%= link_to "Delete Item", item_path(item), method: :delete, remote: true, class: 'btn btn-danger', data: {confirm: 'Are you sure you want to delete this list?'} %>
+                        </th>
+                        <th class="text-center">
+                            <%= link_to "View Item Details", item_path(item), class: 'btn btn-primary' %>
+                        </th>
+                    </tr>
+                    <% end %>
+                </tbody>
+            </table>
+          </div>
+      </div>
+    </div>
+</div>
