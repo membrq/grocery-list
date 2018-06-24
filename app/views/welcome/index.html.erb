@@ -3,7 +3,8 @@
   <h1>Welcome to Grocery Buddy!</h1><br />
     <p>Your solution for getting grocery shopping done!</p><br />
     <% unless user_signed_in? %>
-      <%= link_to "Register", new_user_registration_path, class: 'btn btn-primary' %>
+      <%= link_to "Register", new_user_registration_path, class: 'btn btn-primary' %> 
+      <%= link_to "Sign In", new_user_session_path, class: 'btn btn-primary' %>
     <% end %>
 </div>
 <div class="container-fluid">

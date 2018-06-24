@@ -12,10 +12,10 @@ class ItemsController < ApplicationController
         @item = Item.new(item_params)
 
         if @item.save
-            flash[:notice] = "Your item has been saved to your grocery list!"
+            flash[:success] = "Your item has been saved to your grocery list!"
             redirect_to items_path 
         else
-            flash.now[:alert] = "There was an error saving your item. Please try again."
+            flash.now[:danger] = "There was an error saving your item. Please try again."
             render :new 
         end
     end 
@@ -32,11 +32,10 @@ class ItemsController < ApplicationController
         @item = Item.find(params[:id])
     
         if @item.update(item_params)
-        #if @item.save
-          flash.now[:notice] = "Your item was successfully updated!"
+          flash[:success] = "Your item was successfully updated!"
           redirect_to items_path
         else
-          flash.now[:error] = "An error occurred. Your item was not updated."
+          flash.now[:danger] = "An error occurred. Your item was not updated."
           render :edit
         end
     end 
@@ -45,10 +44,10 @@ class ItemsController < ApplicationController
         @item = Item.find(params[:id])
 
         if @item.destroy
-            flash[:notice] = "Your item was deleted from the list."
+            flash[:secondary] = "Your item was deleted from the list."
             redirect_to items_path
         else
-            flash[:alert] = "Your item was not deleted. Please try again."
+            flash[:danger] = "Your item was not deleted. Please try again."
             redirect_to items_path
         end
 

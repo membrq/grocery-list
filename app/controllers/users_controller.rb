@@ -12,11 +12,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     if @user.update(user_params)
-    #if @user.save
-      flash.now[:notice] = "Your account was successfully updated!"
+      flash[:success] = "Your account was successfully updated!"
       redirect_to user_path
     else
-      flash.now[:error] = "An error occurred. Your account was not updated."
+      flash.now[:danger] = "An error occurred. Your account was not updated."
       render :edit
     end
   end
