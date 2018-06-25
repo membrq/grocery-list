@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 20180620034720) do
 
   create_table "items", force: :cascade do |t|
     t.string "name"
-    t.decimal "price", precision: 2
+    t.decimal "price", precision: 8, scale: 2
     t.integer "quantity"
     t.string "item_type"
     t.integer "priority"
