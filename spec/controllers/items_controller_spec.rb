@@ -109,8 +109,8 @@ RSpec.describe ItemsController, type: :controller do
             expect(count).to eq(0)
         end
       
-        it "returns http success" do
-            expect(response).to have_http_status(:success)
+        it "returns http redirect" do
+            expect(response).to have_http_status(:redirect)
         end
     end
 end
